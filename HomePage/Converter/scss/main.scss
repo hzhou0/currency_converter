@@ -1,0 +1,136 @@
+
+// Variables
+// $text-light: #f3f3f3;
+$primary: #f7f2ef;
+$secondary: #e9dfda;
+$warning: #161616;
+$info: #95977f;
+$danger: #876550;
+$success: #dbd8c7;
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+// Navbar
+.navbar-brand {
+    font-family: 'Yeseva One', cursive;
+}
+
+// Header
+header {
+    width: 100%;
+    height: 100vh;
+    background: url(../project_resources/img/Untitled_Artwork.png);
+    background-size: cover;
+    background-position: 0% 0%;
+}
+
+// Title & Subtitle
+
+header h1 {
+    font-size: 3.2rem;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15rem;
+    padding-left: 65%;
+    padding-right: 2rem;
+}
+
+.title {
+    font-family: 'Playfair Display', serif;;
+}
+
+// 
+
+// Icons
+.flex-items {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.flex-items > div {
+    padding: 20px;
+}
+
+.icons {
+    padding: 30px;
+}
+
+.icons h3 {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.icons i {
+    background-color: $info;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+// all
+#all {
+    height: 100px;
+    background: $warning;
+    color: #fff;
+}
+
+// Convert Currency
+.flex-column-container {
+    display: flex;
+    flex-direction: row;
+    padding: 8rem 5rem;
+    align-items: center;
+}
+
+.column-left {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+}
+
+.column-right {
+    flex: 1;
+    margin: 10px;
+    padding: 10px;
+}
+
+// atany
+.bottom-line {
+    border-bottom: 1px solid $danger;
+}
+
+// visit
+#visit {
+    padding: 10rem 0;
+}
+
+#visit > div > a {
+    margin: 5rem 5rem;
+    border: 3px solid $warning;
+    font-size: 2rem;
+}
+
+// Footer
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height:200px;
+}
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss'
