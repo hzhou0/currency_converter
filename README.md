@@ -10,7 +10,7 @@ Chrome extensions can't import javascript modules very easily. We kind of need r
 
 You may use wonder what all the *.vue files are. Vue is a frontend javascript library. I like it because it's simple and I'm stupid. I didn't want to use a library, but the aforementioned reasons kinda forced me.
 
-##Directory structure
+## Directory structure
 - src (where the codes are)
     - components (reusable components)
     - options (represents the options interface when clicking on extension)
