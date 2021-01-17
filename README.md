@@ -1,28 +1,31 @@
 # currency_converter
 
-## Um Hi there
-I did say I was going to leave it, but I guess I couldn't stop myself. You might be a bit confused at everything here. I'm probably won't be
-on until 11 at the earliest. 
+## Functions
+    * Automatically convert the currency on websites to the currency set by user
+    * Manual conversion is available on the popup window, where users can enter a price and select a unit to convert to.
+    
+## How to install
+    * Download from https://github.com/hzhou0/currency_converter
+    * Unzip "currency_converter-master"
+    * Enter following command lines in terminal, replace <...> accrodingly:
+        * cd <the path to your currency_converter-master folder>
+            * Example: cd Desktop/currency_converter-master
+        * npm install
+        * npm install -g @vue/cli
+        * npm run build
+    * Go to chrome://extensions/ in Google Chrome
+    * Make sure Developer mode is on
+    * Click "Load unpacked"
+    * Navigate to "currency_converter-master" folder
+    * Select "dist" folder
+    * You are all done!!
 
-I'll try to explain what's going on here. 
+## How to use
+    * Click on "Details" under the installed extention (on chrome://extensions/)
+    * Click on "Extension options" to set your preference, then close the options window
+    * Refresh the site you want to convert
 
-Chrome extensions can't import javascript modules very easily. We kind of need request modulfes for conversion rates. To do so would require listing every single file in manifest.json. This boilerplate includes webpack, which compiles all our libraries into single files. 
-
-You may use wonder what all the *.vue files are. Vue is a frontend javascript library. I like it because it's simple and I'm stupid. I didn't want to use a library, but the aforementioned reasons kinda forced me.
-
-## Directory structure
-- src (where the codes are)
-    - components (reusable components)
-    - options (represents the options interface when clicking on extension)
-    - popup (interface when you click on it)
-- public (ignore this)
-- dist (the compiled codes)
-## What you should do now
-- Pull the changes
-- Install webstorm
-- cd into this directory and run `npm install` and `npm run serve` with command prompt
-- You should now have the dist directory. Load that as a chrome extension
-- Look into vue, just the essentials should be enough https://vuejs.org/v2/guide/instance.html
-
-I'll see you soon
-:)
+## Trouble Shooting
+    * if you get errors after entering "npm install", try "sudo npm install" 
+    * if you get errors after entering "npm install -g @vue/cli", try "sudo npm install -g @vue/cli"
+    * if you get errors after entering "npm run build", try entering "sudo npm install -g @vue/cli" before hand
