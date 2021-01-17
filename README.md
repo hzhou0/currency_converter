@@ -17,7 +17,7 @@
     * Click "Load unpacked"
     * Navigate to "currency_converter-master" folder
     * Select "dist" folder
-    * You are all done!!
+    * You are all done!! 👍( ͡❛ ͜ʖ ͡❛👍)
 
 ## How to use
     * Click on "Details" under the installed extention (on chrome://extensions/)
