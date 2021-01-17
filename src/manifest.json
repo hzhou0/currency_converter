@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "__MSG_extName__",
-  "homepage_url": "http://google.com",
+  "homepage_url": "https://currency-converter-page.herokuapp.com/",
   "description": "A Vue Browser Extension",
   "default_locale": "en",
   "permissions": [
