@@ -26,7 +26,7 @@
 <script>
 import {baseCurSym, dollarSym, get_rates} from "@/util/rate";
 import currency from '@/util/available-currency.js';
-import {convert} from '@/util/rate.js';
+import {convert, convertTargetSym} from '@/util/rate.js';
 
 export default {
     name: 'HelloWorld',
@@ -39,11 +39,16 @@ export default {
         }
     },
     async beforeMount() {
-        this.unit2 = await dollarSym();
+        this.unit2 = await convertTargetSym();
     },
     methods: {
         update: async function () {
             this.proxy= await convert(this.amount, this.unit2)
+        }
+    },
+    watch:{
+        unit2: (newVal)=>{
+            chrome.storage.sync.set({currencyTo: newVal})
         }
     }
 }
