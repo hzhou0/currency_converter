@@ -24,6 +24,17 @@ export function dollarSym(){
         });
     })
 }
+export function convertTargetSym(){
+    return new Promise((resolve, reject) => {
+        chrome.storage.sync.get(['currencyTo'], function (result) {
+            if (result.currencyTo) {
+                resolve(result.currencyTo);
+            } else {
+                resolve(defaults.DOLLAR);
+            }
+        });
+    })
+}
 
 export async function convert(curAmount, curSymbol) {
     return new Promise((resolve, reject) => {
