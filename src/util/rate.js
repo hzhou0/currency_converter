@@ -7,7 +7,7 @@ export function baseCurSym() {
             if (result.outputCurrency) {
                 resolve(result.outputCurrency);
             } else {
-                resolve(defaults.CUR_SYMBOL);
+                resolve(defaults.BASE_CUR_SYMBOL);
             }
 
         });
@@ -18,7 +18,7 @@ export async function convert(curAmount, curSymbol) {
     return new Promise((resolve, reject) => {
         chrome.storage.local.get(['rates'], async function (result) {
             if (result.rates[curSymbol]) {
-                resolve(result.rates[curSymbol] * curAmount)
+                resolve(curAmount / result.rates[curSymbol])
             } else {
                 resolve(false)
             }
@@ -34,8 +34,12 @@ export async function get_rates() {
         }
     })
     return new Promise((resolve, reject) => {
-        chrome.storage.local.set(res.data, () => {
-            resolve(true)
-        })
+        try {
+            chrome.storage.local.set(res.data, () => {
+                resolve(true)
+            })
+        } catch (e) {
+            console.log(e)
+        }
     })
 }

@@ -1,4 +1,6 @@
 {
-  "CUR_SYMBOL":"USD",
+  "BASE_CUR_SYMBOL":"USD",
+  "DOLLAR": "CAD",
+  "TOKEN": "\b",
   "API": "https://api.exchangeratesapi.io/latest"
 }

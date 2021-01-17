@@ -11,6 +11,7 @@
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "findandreplacedomtext": "^0.4.6",
+    "lodash": "^4.17.20",
     "string-replace-async": "^2.0.0",
     "vue": "^2.6.11"
   },
@@ -38,7 +39,9 @@
       "parser": "babel-eslint"
     },
     "rules": {
-      "no-unused-vars": "warn"
+      "no-unused-vars": "warn",
+      "no-control-regex": "warn",
+      "no-useless-escape": "warn"
     }
   },
   "browserslist": [
