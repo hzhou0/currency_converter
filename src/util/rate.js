@@ -1,39 +1,41 @@
 import axios from "axios";
 import defaults from "@/util/defaults.json"
-function getBaseCurrency(){
-    chrome.storage.sync.get(['outputCurrency'], function (result) {
-        if (chrome.run.lastError) {
-            return defaults.CUR_SYMBOL;
-        }
-        return result.key;
-    });
+
+export function baseCurSym() {
+    return new Promise((resolve, reject) => {
+        chrome.storage.sync.get(['outputCurrency'], function (result) {
+            if (result.outputCurrency) {
+                resolve(result.outputCurrency);
+            } else {
+                resolve(defaults.CUR_SYMBOL);
+            }
+
+        });
+    })
 }
-function convert(curAmount, curSymbol) {
-    const outputCurrency=getBaseCurrency()
-    chrome.storage.local.get([curSymbol], function (result) {
-        if (chrome.run.lastError) {
-            return axios.get(defaults.API, {
-                params: {
-                    symbols: curSymbol,
-                    base: outputCurrency
-                }
-            }).then(res=>
-               res.data[outputCurrency]*curAmount
-            )
-        }
-        else{
-            return result.key*curAmount;
-        }
-    });
+
+export async function convert(curAmount, curSymbol) {
+    return new Promise((resolve, reject) => {
+        chrome.storage.local.get(['rates'], async function (result) {
+            if (result.rates[curSymbol]) {
+                resolve(result.rates[curSymbol] * curAmount)
+            } else {
+                resolve(false)
+            }
+        })
+    })
 }
-function get_rates(){
-    const outputCurrency=getBaseCurrency()
-    axios.get(defaults.API, {
+
+export async function get_rates() {
+    const outputCurrency = await baseCurSym()
+    let res = await axios.get(defaults.API, {
         params: {
             base: outputCurrency
         }
-    }).then(res=>
-        chrome.storage.local.set(res.data, ()=>{})
-    )
-
+    })
+    return new Promise((resolve, reject) => {
+        chrome.storage.local.set(res.data, () => {
+            resolve(true)
+        })
+    })
 }

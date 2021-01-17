@@ -10,6 +10,8 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "findandreplacedomtext": "^0.4.6",
+    "string-replace-async": "^2.0.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {
