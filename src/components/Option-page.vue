@@ -1,13 +1,18 @@
 <template>
     <div>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
               integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
-              crossorigin="anonymous">
         <!-- <ul>
             <li v-for="currency in allCurrency" :key="currency">{{currency.code}}</li>
         </ul> -->
+<div class="container">
+        <div class="title mb-3 mt-3">
+                <h1 class="display-4 d-inline-block">Settings </h1>
+                <i class="fas fa-cogs fa-3x"></i>
+            </div>
 
-        <div class="input-group mb-3">
+        <div class="options">
+
+        <div class="input-group mb-4">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="unit-default">Unit to Convert To</label>
             </div>
@@ -17,7 +22,7 @@
             </select>
         </div>
 
-        <div class="input-group mb-3">
+        <div class="input-group mt-4">
             <div class="input-group-prepend">
                 <label class="input-group-text" for="unit-dollar">Unit represented by $ sign</label>
             </div>
@@ -61,17 +66,5 @@ export default {
 </script>
 
 <style scoped>
-body {
-    background: #e9dfda;
-}
-
-header {
-    margin-top: 1.3rem;
-    margin-left: 1.3rem;
-    margin-right: 1.3rem;
-}
-
-.container {
-    background: #f7f2ef;
-}
+    height: 300px;
 </style>
