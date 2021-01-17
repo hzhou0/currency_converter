@@ -35,7 +35,6 @@ async function render() {
                     if (each.code === defaults.DOLLAR || each.symbol_native !== "$") {
                         placeHolder = await replaceAsync(placeHolder, regex,
                             async (match, p1, p2) => {
-                            console.log(match)
                                 let con = await convert(p2, each.code)
                                 if (!con) {
                                     return match
@@ -51,8 +50,11 @@ async function render() {
         }
     }
 }
-
-baseCurSym().then(e => baseCur = currency[e]).then(() => render()).then(() => console.log('finished'));
+chrome.storage.onChanged.addListener((changes)=>{
+    get_rates().then(()=>baseCurSym().then(e => {baseCur = currency[e];console.log(baseCur)}).then(() => render()));
+    console.log("rerendering")
+})
+baseCurSym().then(e => {baseCur = currency[e];console.log(baseCur)}).then(() => render());
 /*
 let allSpanLis = document.querySelectorAll('span');
 let pNameLis = [];

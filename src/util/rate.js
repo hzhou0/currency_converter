@@ -13,6 +13,17 @@ export function baseCurSym() {
         });
     })
 }
+export function dollarSym(){
+    return new Promise((resolve, reject) => {
+        chrome.storage.sync.get(['dollar'], function (result) {
+            if (result.Dollar) {
+                resolve(result.Dollar);
+            } else {
+                resolve(defaults.DOLLAR);
+            }
+        });
+    })
+}
 
 export async function convert(curAmount, curSymbol) {
     return new Promise((resolve, reject) => {

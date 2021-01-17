@@ -1,10 +1,11 @@
 {
   "manifest_version": 2,
   "name": "__MSG_extName__",
-  "homepage_url": "http://localhost:8080/",
+  "homepage_url": "http://google.com",
   "description": "A Vue Browser Extension",
   "default_locale": "en",
   "permissions": [
+    "alarms",
     "activeTab",
     "storage",
     "<all_urls>",

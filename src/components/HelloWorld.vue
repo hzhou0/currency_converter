@@ -51,6 +51,7 @@ export default {
     defaultText () {
       return browser.i18n.getMessage('extName')
     }
+
   }
 }
 
