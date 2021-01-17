@@ -11,7 +11,6 @@
         * cd <the path to your currency_converter-master folder>
             * Example: cd Desktop/currency_converter-master
         * npm install
-        * npm install -g @vue/cli
         * npm run build
     * Go to chrome://extensions/ in Google Chrome
     * Make sure Developer mode is on
