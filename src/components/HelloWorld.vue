@@ -1,18 +1,18 @@
 <template>
-  <div>
+  <div class="body">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
-    <header>
-        <div class="btn-group">
-            <button id="length" class="btn btn-primary active" type="button">Length</button>
-            <button id="weight" class="btn btn-primary" type="button">Weight</button>
-            <button id="currency" class="btn btn-primary" type="button">Currency</button>
-        </div>
-    </header>
     <main>
+        <form action="">
+          <div class="btn-group mb-2 bg-grey">
+            <button class="btn btn-dark" type="button">Length</button>
+            <button class="btn btn-dark" type="button">Weight</button>
+            <button class="btn btn-dark" type="button">Currency</button>
+        </div>
+        </form>
         <div class="container text-center">
-            <label class="mt-2" for="input-value">Value to Convert:</label>
-            <input type="number" name="" id="input-value">
+            <label for="input-value">Value to Convert:</label>
+            <input class="d-block w-80 mb-1" type="number" name="" id="input-value">
             <div id="convert-from" class="form-group">
                 <label for="length-from">From:</label>
                 <select class="form-control" id="length-from">
@@ -27,8 +27,8 @@
                     <option>{{unit2}}</option>
                 </select>
             </div>
-            <button class="btn-light" id="convert-btn">Calculate</button>
-            <label class="mt-2" for="output-value">Result:</label>
+            <button class="btn" id="convert-btn" type="post">Calculate</button>
+            <label for="output-value">Result:</label>
             <input type="number" name="" id="output-value">
         </div>
     </main>
@@ -53,18 +53,33 @@ export default {
     }
   }
 }
-</script>
 
+</script>
 <style scoped>
-  body {
-    background: #e9dfda;
+  html {
+    /* background: #333333;
+    color: aliceblue; */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 1.3rem;
   }
-  header {
-    margin-top: 1.3rem;
-    margin-left: 1.3rem;
-    margin-right: 1.3rem;
+  
+  main {
+    background: #767676;
+    padding: 1rem;
   }
+
   .container {
-    background: #f7f2ef;
+    display: flex;
+    flex-direction: column;
   }
+
+  #convert-btn {
+    background: #a9a9a9;
+    color: #fff;
+    border-radius: 5px;
+  }
+
 </style>

@@ -1,4 +1,3 @@
-import allCurrency from "./common-currency.json"
 
 export const currency =
     {
