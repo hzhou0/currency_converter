@@ -29,3 +29,6 @@
     * if you get errors after entering "npm install", try "sudo npm install" 
     * if you get errors after entering "npm install -g @vue/cli", try "sudo npm install -g @vue/cli"
     * if you get errors after entering "npm run build", try entering "sudo npm install -g @vue/cli" before hand
+
+## More
+    * For more information, visit https://festive-jang-f3db52.netlify.app
