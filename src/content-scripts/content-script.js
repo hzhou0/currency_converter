@@ -5,8 +5,6 @@ import replaceAsync from "string-replace-async"
 import _ from "lodash"
 
 let baseCur
-
-
 const ele = document.getElementsByTagName("*");
 
 async function render() {
@@ -54,7 +52,7 @@ async function render() {
     }
 }
 
-baseCurSym().then(e => baseCur = currency[e]).then(() => get_rates().then(() => render()).then(() => console.log('finished')));
+baseCurSym().then(e => baseCur = currency[e]).then(() => render()).then(() => console.log('finished'));
 /*
 let allSpanLis = document.querySelectorAll('span');
 let pNameLis = [];
