@@ -16,15 +16,15 @@
             <div id="convert-from" class="form-group">
                 <label for="length-from">From:</label>
                 <select class="form-control" id="length-from">
-                    <option>meter(m)</option>
-                    <option>foot(ft)</option>
+                    <option>{{unit1}}</option>
+                    <option>{{unit2}}</option>
                 </select>
             </div>
             <div id="convert-to" class="form-group">
                 <label for="length-from">To:</label>
                 <select class="form-control" id="length-to">
-                    <option>meter(m)</option>
-                    <option>foot(ft)</option>
+                    <option>{{unit1}}</option>
+                    <option>{{unit2}}</option>
                 </select>
             </div>
             <button class="btn-light" id="convert-btn">Calculate</button>
@@ -38,6 +38,12 @@
 <script>
 export default {
   name: 'HelloWorld',
+  data(){
+    return{
+      "unit1": 3,
+      "unit2": 3
+    }
+  },
   mounted () {
     browser.runtime.sendMessage({})
   },
